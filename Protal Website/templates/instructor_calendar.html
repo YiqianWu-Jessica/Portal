@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calendar</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='instructor_calendar.css')}}">
+    </head>
+    <body>
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('instructor_index') }}">Home</a></li>
+                    <li><a href="{{ url_for('instructor_courseteam') }}">Course Team</a></li>
+                    <li><a href="/static/random.pdf">Syllabus</a></li>
+                    <li><a href="{{ url_for('instructor_calendar') }}">Calendar</a></li>
+                    <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+                    <li><a href="{{ url_for('instructor_anonfeedback') }}">Anonfeedback</a></li>
+                    <li><a href="{{ url_for('instructor_Slides') }}">Lecture Slides</a></li>
+                    <li><a href="{{ url_for('instructor_assignment') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('instructor_lab') }}">Labs</a></li>
+                    <li><a href="{{ url_for('instructor_test') }}">Tests</a></li>
+                    <li><a href="{{ url_for('instructor_mark') }}">marks</a></li>
+                    <li><a href="{{ url_for('instructor_remark') }}">Remark</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Calendar</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Please take care of the important date</h2>
+                <p>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=4paos4jtjrgfc6ojh4bhvpph4k%40group.calendar.google.com&ctz=America%2FToronto" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </p>
+            </div>
+        </div>
+        <footer>
+            <span>Copyright&copy 2020 Courseteam, Yiqian Wu & Yuntian Bo</span>
+            <span><a class="ut-website"href="http://web.cs.toronto.edu/people/faculty.htm">faculty of computer science</a></span>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='register.css')}}" />
+        <script>
+            function register() {
+            
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var type = document.getElementById("type");
+            
+    
+            if (username.value == null || username.value == "") {
+    
+                alert("Require username");
+    
+            } else if (password.value == null || password.value  == "") {
+    
+                alert("Require password");
+    
+            }else if (type.value == null || type.value  == "") {
+    
+                alert("Require type");
+    
+            } else {
+    
+                alert("Provide correct name, username or password")
+    
+            }
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1> Register for CSCB20! </h1>
+
+        <!-- register form -->
+
+        <div id="register_frame">
+            <form action="/register" method="POST" onsubmit="return register();">
+                <label>username：<input type="text"  value="" placeholder="username" name="username" id="username"required></label>
+                <label>password：<input type="password"  value="" placeholder="password" name="password" id="password"required></label>
+                <label>type: <input type="text" value="" placeholder="instructor or student?" name="type" id="username"required></label>
+                <input type="submit" id="btn_login" value="register" onclick="{{url_for('register')}}"/>
+                <a class="home"href="{{url_for('login')}}">login</a>
+            </form>
+            <!-- <a class="home"href="{{url_for('login')}}">login</a> -->
+        </div>
+
+        {% if login == 'failed' %}
+        <script>
+        function register() {
+        
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var type = document.getElementById("type");
+        
+
+        if (username.value == null || username.value == "") {
+
+            alert("Require username");
+
+        } else if (password.value == null || password.value  == "") {
+
+            alert("Require password");
+
+        }else if (type.value == null || type.value  == "") {
+
+            alert("Require type");
+
+        } else {
+
+            alert("Provide correct name, username or password")
+
+        }
+        }
+        </script>
+        {% endif %}
+        <footer>
+            <span>Copyright&copy 2020 , Yiqian Wu & Yuntian Bo</span>
+            <span><a class="ut-website" href="http://web.cs.toronto.edu/people/faculty.htm">faculty of computer science</a></span>
+        </footer>
+    </body>
+</html>
+
+        
