@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marks</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='student_mark.css')}}">
+    </head>
+
+    <body>
+         <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('student_index') }}">Home</a></li>
+                    <li><a href="{{ url_for('student_courseteam') }}">Course Team</a></li>
+                    <li><a href="/static/random.pdf">Syllabus</a></li>
+                    <li><a href="{{ url_for('student_calendar') }}">Calendar</a></li>
+                    <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+                    <li><a href="{{ url_for('student_anonfeedback') }}">Anonfeedback</a></li>
+                    <li><a href="{{ url_for('student_Slides') }}">Lecture Slides</a></li>
+                    <li><a href="{{ url_for('student_assignment') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('student_lab') }}">Labs</a></li>
+                    <li><a href="{{ url_for('student_test') }}">Evaluations</a></li>
+                    <li><a href="{{ url_for('student_mark') }}">Marks</a></li>
+                    <li><a href="{{ url_for('student_remark') }}">Remark</a></li>
+                    <li><a href="https://markus.teach.cs.toronto.edu/csc207-2019-09/?locale=en">MarkUs</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container2"> 
+            <h1>Marks</h1>
+            {% for post in grade %}
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Assignement</h3>
+                    
+                    {{post.assignment}}
+                    
+                </div>
+                <br>
+                <div class="grid-item">
+                    <h3>Labs</h3>
+                   
+                    {{post.lab}}
+                 
+                </div>
+                <br>
+                <div class="grid-item">
+                    <h3>Midterm</h3>
+                 
+                    {{post.midterm}}
+              
+                </div>
+                <br>
+                <div class="grid-item">
+                    <h3>Final</h3>
+           
+                    {{post.final}}
+            
+                </div>
+            </div>
+            {% endfor %}
+        
+            
+        </div>
+        
+    </body>
+
+    <footer>
+            Copyright&copy <a href="http://web.cs.toronto.edu/people/faculty.htm">facult of computer science at uoft</a>; 2020, Assignments, Yiqian Wu & Yuntian Bo
+    </footer>
+</html>

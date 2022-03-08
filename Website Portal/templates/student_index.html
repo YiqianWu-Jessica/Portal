@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+       <title>Home</title>
+       <link rel="stylesheet" href="{{ url_for('static',filename='student_index.css')}}">
+   </head>
+
+   <body>
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('student_index') }}">Home</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="{{ url_for('student_courseteam') }}">Course Team</a></li>
+                    <li><a href="/static/random.pdf">Syllabus</a></li>
+                    <li><a href="{{ url_for('student_calendar') }}">Calendar</a></li>
+                    <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="showcase">
+            <div class="showcase-container"></div>
+               <div class="title">
+                    <h1>Hi, Student!</h1>
+                    <h2>Welcome to CSCB20!</h2>
+                    <h2>Introduction to Database and Web Application</h2>
+                    <h4>
+                        <span> practical introduction to databases and Web app development.</span>
+                        <span> Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design.</span>
+                        <span>Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content;</span>
+                        <span>Web application development and interface with databases.</span>
+                        <span>Prerequisite Some experience with programming in an imperative language such as Python, Java or C.</span> 
+                        <span>Exclusion This course may not be taken after - or concurrently with - any C- or D-level CSC course.</span>   
+                    </h4>
+                </div> 
+                <br>
+                <br>
+                <img src="/static/30304.png"/>                 
+                
+                
+                <div class="left-sidebar">
+                    <br>
+                    <ul>
+                        <h3><a href="{{ url_for('student_anonfeedback') }}">Anonfeedback</a></h3>
+                        <h3><a href="{{ url_for('student_Slides') }}">Lecture Slides</a></h3>
+                        <h3><a href="{{ url_for('student_assignment') }}">Assignments</a></h3>
+                        <h3><a href="{{ url_for('student_lab') }}">Labs</a></h3>
+                        <h3><a href="{{ url_for('student_test') }}">Evaluations</a></h3>
+                        <h3><a href="{{ url_for('student_mark') }}">Marks</a></h3>
+                        <h3><a href="{{ url_for('student_remark') }}">Remark</a></h3>
+                        <h3><a href="https://markus.teach.cs.toronto.edu/csc207-2019-09/?locale=en">MarkUs</a></h3>
+                    </ul>
+                </div>
+                
+        </section>
+
+        <br>
+        
+        <footer>
+            <span>Copyright&copy 2020 , Yiqian Wu & Yuntian Bo</span>
+            <span><a class="ut-website" href="http://web.cs.toronto.edu/people/faculty.htm">faculty of computer science</a></span>
+        </footer>
+   </body>
+</html>

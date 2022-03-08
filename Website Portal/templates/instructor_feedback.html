@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anon Feedback</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='instructor_feedback.css') }}" />
+        <script>
+            function instructor_feedback() {
+        
+                var student_name = document.getElementById("student_name");
+                var feedback_name = document.getElementById("feedback_name");
+
+                if (student_name.value == null || student_name.value == "") {
+
+                    alert("Require student name");
+                
+                } else if (feedback_name.value == null || feedback_name.value  == "") {
+
+                    alert("Require feedback");    
+
+                } else {
+
+                    alert("Cannot be empty")
+
+                }
+                }
+        </script>
+    </head>
+    
+    <body>
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('instructor_index') }}">Home</a></li>
+                    <li><a href="{{ url_for('instructor_courseteam') }}">Course Team</a></li>
+                    <li><a href="/static/random.pdf">Syllabus</a></li>
+                    <li><a href="{{ url_for('instructor_calendar') }}">Calendar</a></li>
+                    <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+                    <li><a href="{{ url_for('instructor_anonfeedback') }}">Anonfeedback</a></li>
+                    <li><a href="{{ url_for('instructor_Slides') }}">Lecture Slides</a></li>
+                    <li><a href="{{ url_for('instructor_assignment') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('instructor_lab') }}">Labs</a></li>
+                    <li><a href="{{ url_for('instructor_test') }}">Tests</a></li>
+                    <li><a href="{{ url_for('instructor_mark') }}">marks</a></li>
+                    <li><a href="{{ url_for('instructor_remark') }}">Remark</a></li>
+                </ul>
+            </div>
+        </nav>
+            
+        <h2>Reply feedback</h2>
+        <div class="feedback-box">
+            <form class="my-form" action="/instructor_feedback" method="POST" onsubmit="return instructor_feedback();">
+                <div class ="form">
+                    <p><input type="text" value="" placeholder="student's name here" name="student_name" id="student_name"required>
+                
+                    </p>
+                    <h3>Leave Your Feedback</h3>
+                    <textarea type="text" name="feedback_name" id="feedback_name"required></textarea>
+                    
+                </div>
+                <input class="button" type="submit" value="Submit" name="fname">
+            </form>
+        
+        </div>
+
+        <footer>
+            <span>Copyright&copy 2020 Anon Feedback, Yiqian Wu & Yuntian Bo</span>
+            <span><a class="ut-website"href="http://web.cs.toronto.edu/people/faculty.htm">faculty of computer science</a></span>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anon Feedback</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='student_feedback.css') }}" />
+
+        <script>
+            function student_feedback() {
+        
+                var instructor_name = document.getElementById("instructor_name");
+                var fname1 = document.getElementById("fname1");
+                var fname2 = document.getElementById("fname2");
+                var fname3 = document.getElementById("fname3");
+                var fname4 = document.getElementById("fname4");
+                var fname5 = document.getElementById("fname5");
+
+                if (instructor_name.value == null || instructor_name.value == "") {
+
+                    alert("Require instructor name");
+
+                } else if (fname1.value == null || fname1.value  == "") {
+
+                    alert("feedback all the questions");
+
+                } else if(fname2.value == null  && fname2.value == ""){
+
+                    alert("feedback all the questions");
+
+                } else if(fname3.value == null  && fname3.value == ""){
+
+                    alert("feedback all the questions");
+               
+                } else if(fname4.value == null  && fname4.value == ""){
+
+                    alert("feedback all the questions");
+
+                }else if(fname5.value == null  && fname5.value == ""){
+
+                    alert("feedback all the questions");
+                
+                } else {
+
+                    alert("Already feedback")
+
+                }
+                }
+        </script>
+    </head>
+    
+    <body>
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('student_index') }}">Home</a></li>
+                    <li><a href="{{ url_for('student_courseteam') }}">Course Team</a></li>
+                    <li><a href="/static/random.pdf">Syllabus</a></li>
+                    <li><a href="{{ url_for('student_calendar') }}">Calendar</a></li>
+                    <li><a href="https://piazza.com/class/jr7mjhytaij3jc">Piazza</a></li>
+                    <li><a href="{{ url_for('student_anonfeedback') }}">Anonfeedback</a></li>
+                    <li><a href="{{ url_for('student_Slides') }}">Lecture Slides</a></li>
+                    <li><a href="{{ url_for('student_assignment') }}">Assignments</a></li>
+                    <li><a href="{{ url_for('student_lab') }}">Labs</a></li>
+                    <li><a href="{{ url_for('student_test') }}">Evaluations</a></li>
+                    <li><a href="{{ url_for('student_mark') }}">Marks</a></li>
+                    <li><a href="{{ url_for('student_remark') }}">Remark</a></li>
+                    <li><a href="https://markus.teach.cs.toronto.edu/csc207-2019-09/?locale=en">MarkUs</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="feedback-box"></div>    
+            <h2>Reply feedback</h2>
+
+            <form class="my-form" action="/student_feedback" method="POST" onsubmit="return student_feedback();">
+                <div class ="form">
+                    <p><input type="text" value="" placeholder="instructor's name here" name="instructor_name" id="instructor_name"required>
+                        
+                    </p>
+                    <h3>What do you like about the instructor teaching?</h3>
+                    <textarea type="text" name="fname1" id="fname1"required></textarea>
+                    <br>
+                    <h3>What do you recommend the instructor to do to improve their teaching?</h3>
+                    <textarea type="text" name="fname2" id="fname2"required></textarea>
+                    <br>
+                    <h3>What do you like about the labs?</h3>
+                    <textarea type="text" name="fname3" id="fname3"required></textarea>
+                    <br>
+                    <h3>What do you recommend the lab instructors to do to improve their lab teaching?</h3>
+                    <textarea type="text" name="fname4" id="fname4"required></textarea>
+                    <br>
+                    <h3>Leave Your Feedback</h3>
+                    <textarea type="text" name="fname5" id="fname5"required></textarea>
+                </div>
+                <input class="button" type="submit" value="Submit" name="fname">
+            </form>
+        
+        </div>
+
+        <footer>
+            <span>Copyright&copy 2020 Anon Feedback, Yiqian Wu & Yuntian Bo</span>
+            <span><a class="ut-website"href="http://web.cs.toronto.edu/people/faculty.htm">faculty of computer science</a></span>
+        </footer>
+    </body>
+
+</html>
